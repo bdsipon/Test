@@ -1,1 +1,10 @@
-<p>video-details works!</p>
+<div >
+        <video width="700"  controls autoplay [src]="SelectedVideo?.url">
+  
+            <!-- <source  [src]="SelectedVideo?.url"  *ngIf="SelectedVideo?.url"  type="video/mp4"> -->
+        </video> 
+        <h5 >Title : {{SelectedVideo?.title}}</h5>
+        <p >uploadedAt : {{SelectedVideo?.uploadedAt}} <br>
+      url : {{SelectedVideo?.url}}</p>
+      
+    </div>
