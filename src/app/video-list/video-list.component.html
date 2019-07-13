@@ -1,1 +1,13 @@
-<p>video-list works!</p>
+
+<div class="row">
+        <div *ngFor="let videos of AllVideos">
+          <div (click)="OnClick(videos.id)">
+            <video width="100%" height="100%" controls >
+    
+                <source  [src]="videos.url"  *ngIf="videos.url"  >
+            </video> 
+            <h5 >Title : {{videos.title}}</h5>
+         
+        </div>
+      </div>
+    </div>
