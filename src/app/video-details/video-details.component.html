@@ -1,10 +1,73 @@
-<div >
-        <video width="700"  controls autoplay [src]="SelectedVideo?.url">
-  
-            <!-- <source  [src]="SelectedVideo?.url"  *ngIf="SelectedVideo?.url"  type="video/mp4"> -->
-        </video> 
-        <h5 >Title : {{SelectedVideo?.title}}</h5>
-        <p >uploadedAt : {{SelectedVideo?.uploadedAt}} <br>
-      url : {{SelectedVideo?.url}}</p>
-      
-    </div>
+
+<div class="container">
+
+        <div class="row">
+        
+        <div class="col-sm-8" >
+            <div >
+              <video width="500"  controls autoplay [src]="SelectedVideo?.url">
+        
+                  <!-- <source  [src]="SelectedVideo?.url"  *ngIf="SelectedVideo?.url"  type="video/mp4"> -->
+              </video> 
+              <h5 >Title : {{SelectedVideo?.title}}</h5>
+              <p >uploadedAt : {{SelectedVideo?.uploadedAt}} <br>
+            url : {{SelectedVideo?.url}}</p>
+            
+          </div>
+          <!-- <div class="col-md-6 col-md-offset-2 col-sm-12"> -->
+          <div >
+            <div class="comment-wrapper">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h5> Comment panel</h5> 
+                    </div>
+                    <div class="panel-body">
+                        <textarea class="form-control" placeholder="write a comment..." rows="3"></textarea>
+                        <br>
+                        <button type="button" class="btn btn-info pull-right" alt="Just display the button" disabled>Post</button>
+                        <div class="clearfix"></div>
+                        <hr>
+                        <ul class="media-list">
+                                <li class="media" *ngFor="let comment of comments">
+                                        <a href="#" class="pull-left">
+                                            <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
+                                        </a>
+                                        <div class="media-body">
+                                            <span class="text-muted pull-left">
+                                                <small class="text-muted">{{comment.date}}</small>
+                                            </span>
+                                            <strong class="text-muted pull-right"> 
+                                               {{comment.name}}
+                                             </strong>
+                                            <p>
+                                                {{comment.body}}
+                                            </p>
+                                        </div>
+                                    </li>
+                          
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        
+          <!-- <commentslist></commentslist> -->
+        
+            <div class="col-sm-4" >
+              <div (click)="OnClick(videos.id)" class="video-space" *ngFor="let videos of AllVideos">
+                <video width="100%" height="100%" controls >
+            
+                    <source  [src]="videos.url"  *ngIf="videos.url"  >
+                </video> 
+                <h5 >Title : {{videos.title}}</h5>
+                <h5 >Title : {{videos.id}}</h5>
+            </div>
+            </div> 
+        </div>
+        
+        
+        
+        </div>
