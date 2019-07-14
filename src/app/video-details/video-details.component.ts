@@ -30,30 +30,6 @@ export class VideoDetailsComponent implements OnInit {
       PostId = 1;
     }
     this.reloadVideo(PostId);
-    //   this.dataservice.getPostById(PostId)
-    // .then((response) => {response.json()
-    // .then((res:Video)=>{
-    //   this.SelectedVideo=res;
-    //   console.log(res);
-    //   });
-    // })
-
-    //   // this.dataservice.getPostById(PostId)
-    //   // .subscribe(
-    //   //   (data: Video) => this.SelectedVideo = data,
-    //   //   (err: any) => console.log(err),
-    //   //   ()=>console.log(this.SelectedVideo)
-    //   // );
-
-    //   this.dataservice.getAllPosts()
-    // .then((response) => {response.json()
-    // .then((res:Video[])=>{
-    //   this.AllVideos=res;
-
-    //   console.log(res);
-    //   });
-    // })
-    // this.loadVideo()
   }
 
   OnClick(id: Number) {
@@ -103,12 +79,6 @@ export class VideoDetailsComponent implements OnInit {
       });
     });
 
-    // this.dataservice.getPostById(PostId)
-    // .subscribe(
-    //   (data: Video) => this.SelectedVideo = data,
-    //   (err: any) => console.log(err),
-    //   ()=>console.log(this.SelectedVideo)
-    // );
 
     this.dataservice.getAllVideos().then(response => {
       response.json().then((res: Video[]) => {
